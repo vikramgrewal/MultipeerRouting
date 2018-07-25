@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		E60335B52107F3F200F2085E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60335B42107F3F200F2085E /* AppDelegate.swift */; };
-		E60335B72107F3F200F2085E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60335B62107F3F200F2085E /* ViewController.swift */; };
+		E60335B72107F3F200F2085E /* MultipeerInitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60335B62107F3F200F2085E /* MultipeerInitialVC.swift */; };
 		E60335BA2107F3F200F2085E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60335B82107F3F200F2085E /* Main.storyboard */; };
 		E60335BC2107F3F300F2085E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60335BB2107F3F300F2085E /* Assets.xcassets */; };
 		E60335BF2107F3F300F2085E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60335BD2107F3F300F2085E /* LaunchScreen.storyboard */; };
 		E60335CA2107F3F300F2085E /* MultipeerRoutingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60335C92107F3F300F2085E /* MultipeerRoutingTests.swift */; };
 		E60335D52107F3F300F2085E /* MultipeerRoutingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60335D42107F3F300F2085E /* MultipeerRoutingUITests.swift */; };
+		E60335E32108031700F2085E /* PeerInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60335E22108031700F2085E /* PeerInstance.swift */; };
+		E60335E721080F7500F2085E /* MultipeerSessionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60335E621080F7500F2085E /* MultipeerSessionVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,7 @@
 /* Begin PBXFileReference section */
 		E60335B12107F3F200F2085E /* MultipeerRouting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultipeerRouting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E60335B42107F3F200F2085E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E60335B62107F3F200F2085E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E60335B62107F3F200F2085E /* MultipeerInitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerInitialVC.swift; sourceTree = "<group>"; };
 		E60335B92107F3F200F2085E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E60335BB2107F3F300F2085E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E60335BE2107F3F300F2085E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,8 @@
 		E60335D02107F3F300F2085E /* MultipeerRoutingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultipeerRoutingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E60335D42107F3F300F2085E /* MultipeerRoutingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerRoutingUITests.swift; sourceTree = "<group>"; };
 		E60335D62107F3F300F2085E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E60335E22108031700F2085E /* PeerInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerInstance.swift; sourceTree = "<group>"; };
+		E60335E621080F7500F2085E /* MultipeerSessionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerSessionVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +102,13 @@
 			isa = PBXGroup;
 			children = (
 				E60335B42107F3F200F2085E /* AppDelegate.swift */,
-				E60335B62107F3F200F2085E /* ViewController.swift */,
+				E60335B62107F3F200F2085E /* MultipeerInitialVC.swift */,
 				E60335B82107F3F200F2085E /* Main.storyboard */,
 				E60335BB2107F3F300F2085E /* Assets.xcassets */,
 				E60335BD2107F3F300F2085E /* LaunchScreen.storyboard */,
 				E60335C02107F3F300F2085E /* Info.plist */,
+				E60335E22108031700F2085E /* PeerInstance.swift */,
+				E60335E621080F7500F2085E /* MultipeerSessionVC.swift */,
 			);
 			path = MultipeerRouting;
 			sourceTree = "<group>";
@@ -256,8 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E60335B72107F3F200F2085E /* ViewController.swift in Sources */,
+				E60335B72107F3F200F2085E /* MultipeerInitialVC.swift in Sources */,
+				E60335E32108031700F2085E /* PeerInstance.swift in Sources */,
 				E60335B52107F3F200F2085E /* AppDelegate.swift in Sources */,
+				E60335E721080F7500F2085E /* MultipeerSessionVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
