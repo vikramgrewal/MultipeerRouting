@@ -77,16 +77,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VK5-0X-2pO">
+                                <rect key="frame" x="0.0" y="40" width="375" height="535"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="VK5-0X-2pO" firstAttribute="leading" secondItem="VFX-nL-61V" secondAttribute="leading" id="9Cd-AY-HAE"/>
                             <constraint firstItem="VFX-nL-61V" firstAttribute="bottom" secondItem="kGr-mR-InS" secondAttribute="bottom" constant="20" id="NJO-9A-BmF"/>
+                            <constraint firstItem="N9c-UV-vD6" firstAttribute="top" secondItem="VK5-0X-2pO" secondAttribute="bottom" constant="10" id="Weq-5B-4Kq"/>
                             <constraint firstItem="N9c-UV-vD6" firstAttribute="centerX" secondItem="5jQ-oA-DGZ" secondAttribute="centerX" id="bbQ-bl-koW"/>
+                            <constraint firstItem="VFX-nL-61V" firstAttribute="trailing" secondItem="VK5-0X-2pO" secondAttribute="trailing" id="bjC-GQ-nFF"/>
                             <constraint firstItem="kGr-mR-InS" firstAttribute="top" secondItem="N9c-UV-vD6" secondAttribute="bottom" constant="10" id="oIf-kS-bnN"/>
                             <constraint firstItem="kGr-mR-InS" firstAttribute="centerX" secondItem="5jQ-oA-DGZ" secondAttribute="centerX" id="uUX-FK-jPE"/>
+                            <constraint firstItem="VK5-0X-2pO" firstAttribute="top" secondItem="VFX-nL-61V" secondAttribute="top" constant="20" id="vrP-ej-2fi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VFX-nL-61V"/>
                     </view>
+                    <connections>
+                        <outlet property="discoverySwitch" destination="kGr-mR-InS" id="3YP-1R-a8z"/>
+                        <outlet property="usersTableView" destination="VK5-0X-2pO" id="J6B-q3-NSm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPg-hG-tBX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

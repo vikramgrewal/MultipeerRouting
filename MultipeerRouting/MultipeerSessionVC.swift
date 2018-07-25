@@ -11,8 +11,14 @@ import MultipeerConnectivity
 
 class MultipeerSessionVC: UIViewController {
     
+    // Outlets
+    @IBOutlet weak var usersTableView: UITableView!
+    @IBOutlet weak var discoverySwitch: UISwitch!
+    
     var multipeerAdvertiser : MCNearbyServiceAdvertiser?
     var multipeerBrowser : MCNearbyServiceBrowser?
+    
+    var users : [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +26,10 @@ class MultipeerSessionVC: UIViewController {
         
         multipeerBrowser?.delegate = self
         multipeerAdvertiser?.delegate = self
+    
+        setUsers()
+        setTableView()
+        setDiscoverySwitch()
         
         startBrowsingAndAdvertising()
         
@@ -33,6 +43,31 @@ class MultipeerSessionVC: UIViewController {
     func startBrowsingAndAdvertising()  {
         multipeerBrowser?.startBrowsingForPeers()
         multipeerAdvertiser?.startAdvertisingPeer()
+    }
+    
+    func stopBrowsingAndAdvertisting()  {
+        multipeerBrowser?.stopBrowsingForPeers()
+        multipeerAdvertiser?.stopAdvertisingPeer()
+        
+        
+    }
+    
+    func setUsers() {
+        users = [String]()
+    }
+    
+    func setDiscoverySwitch()   {
+        discoverySwitch.addTarget(self, action: #selector(switchChanged), for: UIControlEvents.valueChanged)
+    }
+    
+    @objc func switchChanged(mySwitch: UISwitch) {
+        let value = mySwitch.isOn
+        
+        if !value    {
+            stopBrowsingAndAdvertisting()
+        }   else    {
+            startBrowsingAndAdvertising()
+        }
     }
     
 }
@@ -49,16 +84,70 @@ extension MultipeerSessionVC : MCNearbyServiceBrowserDelegate   {
     
     func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
         let userName = peerID.displayName
-        let alert = UIAlertController(title: "Found " + userName, message: nil, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: nil, style: .cancel, handler: nil))
-        present(alert, animated: true, completion: nil)
+        
+        insertUser(userName: userName)
+        
     }
     
     func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
         let userName = peerID.displayName
-        let alert = UIAlertController(title: "Losthas " + userName, message: nil, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: nil, style: .cancel, handler: nil))
-        present(alert, animated: true, completion: nil)    }
+        
+        removeUser(userName: userName)
+    }
+    
+    func insertUser(userName : String)  {
+        
+        guard !users.contains(userName) else {
+            return
+        }
+        
+        users.append(userName)
+        
+        usersTableView.reloadData()
+    }
+    
+    func removeUser(userName : String)  {
+        
+        guard let userIndex = users.index(of: userName) else {
+            return
+        }
+        
+        users.remove(at: userIndex)
+        
+        usersTableView.reloadData()
+    }
+    
+}
+
+extension MultipeerSessionVC : UITableViewDelegate, UITableViewDataSource   {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return users.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        cell.textLabel?.text = users[indexPath.row]
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44.0
+    }
+    
+    func setTableView() {
+        usersTableView.delegate = self
+        usersTableView.dataSource = self
+        
+        usersTableView.tableFooterView = UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
     
 }
 
