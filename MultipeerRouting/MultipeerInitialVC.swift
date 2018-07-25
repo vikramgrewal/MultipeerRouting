@@ -55,7 +55,6 @@ class MultipeerInitialVC: UIViewController {
             
             let mcPeerId = MCPeerID(displayName: displayNameText)
             
-            
             let multipeerAdvertiser = MCNearbyServiceAdvertiser(peer: mcPeerId, discoveryInfo: nil, serviceType: advertiserNameText)
             
             multipeerSessionVC.multipeerAdvertiser = multipeerAdvertiser
@@ -64,7 +63,11 @@ class MultipeerInitialVC: UIViewController {
             
             multipeerSessionVC.multipeerBrowser = multipeerBrowser
             
-            self.present(multipeerSessionVC, animated: true, completion: nil)
+            let multipeerSessionContainerVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "multipeerSessionContainerVC") as! MultipeerSessionContainerVC
+            
+            multipeerSessionContainerVC.addChildViewController(multipeerSessionVC)
+            
+            self.present(multipeerSessionContainerVC, animated: true, completion: nil)
             
         }
     }

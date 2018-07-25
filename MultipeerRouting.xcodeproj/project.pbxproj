@@ -16,6 +16,8 @@
 		E60335E32108031700F2085E /* PeerInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60335E22108031700F2085E /* PeerInstance.swift */; };
 		E60335E721080F7500F2085E /* MultipeerSessionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60335E621080F7500F2085E /* MultipeerSessionVC.swift */; };
 		E6227C272108E47600F4D92A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6227C262108E47600F4D92A /* Assets.xcassets */; };
+		E64B3CBE210905C700DBB925 /* MultipeerSessionContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64B3CBD210905C700DBB925 /* MultipeerSessionContainerVC.swift */; };
+		E64B3CC021090F6200DBB925 /* MultipeerSessionFriendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64B3CBF21090F6200DBB925 /* MultipeerSessionFriendsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		E60335E22108031700F2085E /* PeerInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerInstance.swift; sourceTree = "<group>"; };
 		E60335E621080F7500F2085E /* MultipeerSessionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerSessionVC.swift; sourceTree = "<group>"; };
 		E6227C262108E47600F4D92A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Downloads/Assets.xcassets; sourceTree = "<group>"; };
+		E64B3CBD210905C700DBB925 /* MultipeerSessionContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerSessionContainerVC.swift; sourceTree = "<group>"; };
+		E64B3CBF21090F6200DBB925 /* MultipeerSessionFriendsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerSessionFriendsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				E60335C02107F3F300F2085E /* Info.plist */,
 				E60335E22108031700F2085E /* PeerInstance.swift */,
 				E60335E621080F7500F2085E /* MultipeerSessionVC.swift */,
+				E64B3CBD210905C700DBB925 /* MultipeerSessionContainerVC.swift */,
+				E64B3CBF21090F6200DBB925 /* MultipeerSessionFriendsVC.swift */,
 			);
 			path = MultipeerRouting;
 			sourceTree = "<group>";
@@ -266,6 +272,8 @@
 				E60335E32108031700F2085E /* PeerInstance.swift in Sources */,
 				E60335B52107F3F200F2085E /* AppDelegate.swift in Sources */,
 				E60335E721080F7500F2085E /* MultipeerSessionVC.swift in Sources */,
+				E64B3CBE210905C700DBB925 /* MultipeerSessionContainerVC.swift in Sources */,
+				E64B3CC021090F6200DBB925 /* MultipeerSessionFriendsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

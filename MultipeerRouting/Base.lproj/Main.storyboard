@@ -60,6 +60,45 @@
             </objects>
             <point key="canvasLocation" x="-225" y="31"/>
         </scene>
+        <!--Multipeer Session ContainerVC-->
+        <scene sceneID="ijh-lt-xjD">
+            <objects>
+                <viewController storyboardIdentifier="multipeerSessionContainerVC" id="Xp2-v8-ouR" customClass="MultipeerSessionContainerVC" customModule="MultipeerRouting" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q1H-7Y-tx2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6sP-rc-CJv">
+                                <rect key="frame" x="81" y="40" width="213" height="29"/>
+                                <segments>
+                                    <segment title="Discover Users"/>
+                                    <segment title="View Friends"/>
+                                </segments>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJI-UU-Tjx">
+                                <rect key="frame" x="0.0" y="88" width="375" height="579"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6sP-rc-CJv" firstAttribute="centerX" secondItem="q1H-7Y-tx2" secondAttribute="centerX" id="5pN-qv-aCd"/>
+                            <constraint firstItem="VJI-UU-Tjx" firstAttribute="trailing" secondItem="wDX-Yg-fUS" secondAttribute="trailing" id="NaZ-29-P0K"/>
+                            <constraint firstItem="6sP-rc-CJv" firstAttribute="top" secondItem="wDX-Yg-fUS" secondAttribute="top" constant="20" id="Wvu-4X-56D"/>
+                            <constraint firstItem="VJI-UU-Tjx" firstAttribute="bottom" secondItem="wDX-Yg-fUS" secondAttribute="bottom" id="c3a-ba-9Gy"/>
+                            <constraint firstItem="VJI-UU-Tjx" firstAttribute="top" secondItem="6sP-rc-CJv" secondAttribute="bottom" constant="20" id="fUn-GR-1bE"/>
+                            <constraint firstItem="VJI-UU-Tjx" firstAttribute="leading" secondItem="wDX-Yg-fUS" secondAttribute="leading" id="ugA-nx-q1q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wDX-Yg-fUS"/>
+                    </view>
+                    <connections>
+                        <outlet property="segmentedView" destination="VJI-UU-Tjx" id="HUo-2p-Tc8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="POw-gr-uJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="488.80000000000001" y="29.23538230884558"/>
+        </scene>
         <!--Multipeer SessionVC-->
         <scene sceneID="u94-I0-Vcf">
             <objects>
@@ -102,7 +141,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPg-hG-tBX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="472.80000000000001" y="28.335832083958024"/>
+            <point key="canvasLocation" x="1217" y="-215"/>
+        </scene>
+        <!--Multipeer Session FriendsVC-->
+        <scene sceneID="09m-CS-3fd">
+            <objects>
+                <viewController id="vhc-na-u1O" customClass="MultipeerSessionFriendsVC" customModule="MultipeerRouting" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vAR-rx-XUO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="frB-mj-Gih">
+                                <rect key="frame" x="0.0" y="40" width="375" height="607"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rzi-d5-u09">
+                                <rect key="frame" x="311" y="40" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Rjo-ff-7U3"/>
+                                    <constraint firstAttribute="width" constant="44" id="g3F-fb-Glv"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="frB-mj-Gih" firstAttribute="leading" secondItem="tS2-lg-jI6" secondAttribute="leading" id="ORm-8Q-Ivw"/>
+                            <constraint firstItem="tS2-lg-jI6" firstAttribute="bottom" secondItem="frB-mj-Gih" secondAttribute="bottom" constant="20" id="Pvh-ZQ-eyC"/>
+                            <constraint firstItem="tS2-lg-jI6" firstAttribute="trailing" secondItem="Rzi-d5-u09" secondAttribute="trailing" constant="20" id="XTp-8a-cr2"/>
+                            <constraint firstItem="frB-mj-Gih" firstAttribute="trailing" secondItem="tS2-lg-jI6" secondAttribute="trailing" id="ZNK-VA-Zct"/>
+                            <constraint firstItem="frB-mj-Gih" firstAttribute="top" secondItem="tS2-lg-jI6" secondAttribute="top" constant="20" id="g9o-cc-Fa2"/>
+                            <constraint firstItem="Rzi-d5-u09" firstAttribute="top" secondItem="tS2-lg-jI6" secondAttribute="top" constant="20" id="yTj-Dj-uzD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tS2-lg-jI6"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2FD-bU-Awn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1217" y="466"/>
         </scene>
     </scenes>
 </document>
